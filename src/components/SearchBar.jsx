@@ -14,10 +14,6 @@ const SearchBar = () => {
         pl: 2,
         boxShadow: "none",
         mr: { sm: 5 },
-        width: 300,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
       }}
     >
       <input
@@ -25,7 +21,6 @@ const SearchBar = () => {
         placeholder="Search..."
         value=""
         onChange={() => {}}
-        style={{ border: "none", outline: "none" }}
       />
       <IconButton type="submit" sx={{ p: "10px", color: "red" }}>
         <Search />
