@@ -21,9 +21,9 @@ const VideoThumbnail = ({
   return (
     <Card
       sx={{
-        width: { md: "320px", xs: "100%" },
+        width: { md: "300px", xs: "100%" },
         boxShadow: "none",
-        borderRadius: 0,
+        borderRadius: 2,
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -33,6 +33,7 @@ const VideoThumbnail = ({
           sx={{ width: 358, height: 180 }}
         />
       </Link>
+
       <CardContent sx={{ backgroundColor: "#1e1e1e", height: "116px" }}>
         <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
           <Typography variant="subtitle1" fontWeight="bold" color={"#FFF"}>
@@ -47,10 +48,15 @@ const VideoThumbnail = ({
               : demoChannelUrl
           }
         >
-          <Typography variant="subtitle2" fontWeight="bold" color={"gray"}>
+          <Typography
+            variant="subtitle2"
+            fontWeight="bold"
+            color={"gray"}
+            sx={{ display: "flex", alignItems: "center" }}
+          >
             {snippet?.channelTitle.slice(0, 60) ||
               demoChannelTitle.slice(0, 60)}
-            <CheckCircle sx={{ fontSize: 12, color: "gray", ml: "5px" }} />
+            <CheckCircle sx={{ fontSize: 14, color: "gray", ml: "5px" }} />
           </Typography>
         </Link>
       </CardContent>
