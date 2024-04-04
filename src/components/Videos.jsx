@@ -1,12 +1,17 @@
 import { Stack, Box } from "@mui/material";
 import { VideoThumbnail, ChannelThumbnail } from "./";
 
-const Videos = ({ videos }) => {
+const Videos = ({ videos, direction }) => {
   // Check if videos is an array of arrays or an array of objects
   const isArrayofArrays = Array.isArray(videos[0]);
 
   return (
-    <Stack direction="row" flexWrap={"wrap"} justifyContent={"start"} gap={2}>
+    <Stack
+      direction={direction || "row"}
+      flexWrap={"wrap"}
+      justifyContent={"start"}
+      gap={2}
+    >
       {(isArrayofArrays ? videos[0] : videos).map((item, idx) => (
         <Box key={idx}>
           {item.id.channelId && <ChannelThumbnail channelDetail={item} />}
