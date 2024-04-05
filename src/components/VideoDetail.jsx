@@ -21,7 +21,7 @@ const VideoDetail = () => {
     fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
       (data) => setVideos(data.items)
     );
-  });
+  }, []);
 
   if (!videoDetail?.snippet) return "Loading...";
 
@@ -34,7 +34,13 @@ const VideoDetail = () => {
     <Box minHeight={"95vh"}>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box
+            sx={{
+              width: "100%",
+              position: "sticky",
+              top: "56px",
+            }}
+          >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
@@ -54,6 +60,7 @@ const VideoDetail = () => {
                 <Typography
                   variant={{ sm: "subtitle1", md: "h6" }}
                   color={"#fff"}
+                  fontFamily={"Roboto"}
                 >
                   {channelTitle}
                   <CheckCircle

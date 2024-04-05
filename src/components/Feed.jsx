@@ -27,10 +27,6 @@ const Feed = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-
-        <Typography variant="body2" sx={{ mt: 1.5, color: "#fff" }}>
-          Youtube 2.0
-        </Typography>
       </Box>
 
       <Box sx={{ p: 2 }}>
@@ -38,7 +34,7 @@ const Feed = () => {
           variant="h4"
           sx={{ color: "white", fontWeight: "bold", mb: 2 }}
         >
-          {selectedCategory} <span style={{ color: "#FC1305" }}>videos</span>
+          {selectedCategory} <span style={{ color: "#95eaea" }}>videos</span>
         </Typography>
 
         <Videos videos={[videos]} />
